@@ -1,0 +1,25 @@
+nbr ligne {{nbrLigne}} <br>
+nbr ligne {{nbrColonne}} <br>
+<div class="table-responsive">
+  <table class="table table-bordered" >
+
+    <tr *ngFor="let tranche of tranches">
+ 
+      <td *ngFor="let item of items ; let s=index"  >
+        <div *ngFor="let  arret of arrets">
+          <div    cdkDragLockAxis="x"  cdkDrag *ngIf="arret.debut + arret.dure >= s+1  && tranche.id==arret.idTranche && s>=arret.debut" style="background: coral">
+ 
+            {{s}}
+          </div>
+        </div>
+      </td>
+ 
+    </tr>
+
+
+
+
+  </table>
+
+
+</div>
